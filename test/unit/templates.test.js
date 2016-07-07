@@ -18,13 +18,7 @@ test('templating a plain string should return the same string', function(t) {
 });
 
 test.test('string variables can be substituted', function(t) {
-  t.assert(template('hello {{name}}', { vars: { name: 'Hassy'} }) === 'hello Hassy', '');
-  t.assert(template('hello {{name}}', emptyContext) === 'hello ', '');
-  t.end();
-});
-
-test.test('strings with multiple variables can be substituted', function(t) {
-  t.assert(template('hello {{nameFirst}} {{nameLast}}', { vars: { nameFirst: 'Neil', nameLast: 'Armstrong'} }) === 'hello Neil Armstrong', '');
+  t.assert(template('{{name}}', { vars: { name: 'Hassy'} }) === 'Hassy', '');
   t.end();
 });
 
@@ -43,16 +37,13 @@ test.test('whole objects can be substituted', function(t) {
   t.end();
 });
 
-test.test('when concatenated with other strings, null and undefined are substituted as an empty string', function(t) {
-  t.equal(template('hello {{name}}', { vars: { name: null } }), 'hello ', '');
-  t.equal(template('hello {{name}}', { vars: { name: undefined } }), 'hello ', '');
-  t.equal(template('hello {{name}}', { vars: {} }), 'hello ', '');
+test.test('null and undefined can be substituted', function(t) {
+  t.equal(template('{{name}}', { vars: { name: null } }), null, '');
+  t.equal(template('{{name}}', { vars: { name: undefined } }), undefined, '');
   t.end();
 });
 
-test.test('when substituted on their own, null and undefined retain their original values', function(t) {
-  t.equal(template('{{name}}', { vars: { name: null } }), null, '');
-  t.equal(template('{{name}}', { vars: { name: undefined } }), undefined, '');
+test.test('a nonexistent variable is substituted as undefined', function(t) {
   t.equal(template('{{name}}', { vars: {} }), undefined, '');
   t.end();
 });
