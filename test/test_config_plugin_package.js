@@ -23,7 +23,7 @@ function runTest(t, scriptName){
     const script = require(scriptName);
     const ee = runner(script);
 
-    ee.on('packaged_plugin_loaded', function(stats){
+    ee.on('plugin_loaded', function(stats){
       t.assert(true);
       t.end();
     });
