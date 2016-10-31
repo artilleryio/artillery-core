@@ -3,8 +3,24 @@
 const test = require('tape');
 const runner = require('../lib/runner').runner;
 
-test('config variables', function(t) {
-    const script = require('./scripts/plugin_packaged.json');
+test('Plugin package name inside plugin config', function(t) {
+    runTest(t, './scripts/plugin_packaged_inner.json');
+});
+
+test('Plugin package name outside plugin config', function(t) {
+    runTest(t, './scripts/plugin_packaged_outer.json');
+});
+
+test('Plugin package name inside plugin config overriding outter package name', function(t) {
+    runTest(t, './scripts/plugin_packaged_inner_override_outter.json');
+});
+
+test('Plugin package name inside plugin config overriding outter package name', function(t) {
+    runTest(t, './scripts/artillery_plugin.json');
+});
+
+function runTest(t, scriptName){
+    const script = require(scriptName);
     const ee = runner(script);
 
     ee.on('packaged_plugin_loaded', function(stats){
@@ -13,4 +29,4 @@ test('config variables', function(t) {
     });
 
     ee.run();
-});
+}
