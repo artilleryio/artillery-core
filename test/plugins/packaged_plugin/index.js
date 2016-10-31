@@ -1,5 +1,4 @@
 'use strict';
-const debug = require('debug');
 
 function packagedPlugin(config, ee) {
   ee.on('done', function(stats){
