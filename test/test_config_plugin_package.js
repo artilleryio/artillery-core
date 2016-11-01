@@ -15,7 +15,7 @@ test('Plugin package name inside plugin config overriding outter package name', 
     runTest(t, './scripts/plugin_packaged_inner_override_outter.json');
 });
 
-test('Plugin package name inside plugin config overriding outter package name', function(t) {
+test('Normal artillery-plugin-*', function(t) {
     runTest(t, './scripts/artillery_plugin.json');
 });
 
