@@ -5,8 +5,8 @@
         {"duration": 2, "arrivalRate": 1}
       ],
       "plugins": {
-        "somePlugin": {
-          "package": "@package"
+        "somePackagedPlugin": {
+          "prefix": "@package/"
         }
       }
   },

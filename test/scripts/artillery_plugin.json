@@ -5,7 +5,7 @@
         {"duration": 2, "arrivalRate": 1}
       ],
       "plugins": {
-        "somePlugin": {}
+        "someNormalPlugin": {}
       }
   },
   "scenarios": [

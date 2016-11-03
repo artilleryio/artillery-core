@@ -4,9 +4,9 @@
       "phases": [
         {"duration": 2, "arrivalRate": 1}
       ],
-      "pluginsPackage": "@package",
+      "pluginsPrefix": "@package/",
       "plugins": {
-        "somePlugin": {}
+        "somePackagedPlugin": {}
       }
   },
   "scenarios": [
