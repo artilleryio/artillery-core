@@ -6,7 +6,7 @@
       ],
       "plugins": {
         "somePackagedPlugin": {
-          "package": "@package/"
+          "scope": "@package/"
         }
       }
   },
