@@ -4,10 +4,10 @@
       "phases": [
         {"duration": 2, "arrivalRate": 1}
       ],
-      "pluginsPrefix": "@invalid_package/",
+      "pluginsPackage": "@invalid_package/",
       "plugins": {
         "somePackagedPlugin": {
-          "prefix": "@package/"
+          "package": "@package/"
         }
       }
   },

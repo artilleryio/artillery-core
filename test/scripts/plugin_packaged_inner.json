@@ -6,7 +6,7 @@
       ],
       "plugins": {
         "somePackagedPlugin": {
-          "prefix": "@package/"
+          "package": "@package/"
         }
       }
   },

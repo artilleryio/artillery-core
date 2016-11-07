@@ -4,7 +4,7 @@
       "phases": [
         {"duration": 2, "arrivalRate": 1}
       ],
-      "pluginsPrefix": "@package/",
+      "pluginsPackage": "@package/",
       "plugins": {
         "somePackagedPlugin": {}
       }
