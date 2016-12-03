@@ -10,8 +10,8 @@ var MESSAGE_COUNT = 0;
 var CONNECTION_COUNT = 0;
 var PRINT_NS_CONNECTIONS = false;
 var CONNECTIONS = {
-  nsp1  : {connections: 0, messages: 0},
-  nsp2  : {connections: 0, messages: 0},
+  nsp1: {connections: 0, messages: 0},
+  nsp2: {connections: 0, messages: 0}
 };
 
 
@@ -24,7 +24,7 @@ io.of('/nsp1').on('connection', function connection(ws){
     CONNECTIONS.nsp1.messages++;
     console.log('Socket.io /nsp1 echoing message: %s', message);
     ws.emit('echoed:nsp1', message);
-  })
+  });
 });
 
 io.of('/nsp2').on('connection', function connection(ws){
@@ -35,7 +35,7 @@ io.of('/nsp2').on('connection', function connection(ws){
     CONNECTIONS.nsp2.messages++;
     console.log('Socket.io /nsp2 echoing message: %s', message);
     ws.emit('echoed:nsp2', message);
-  })
+  });
 });
 
 
