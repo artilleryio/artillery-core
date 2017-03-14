@@ -9,7 +9,7 @@
         "environments": {
           "type": "object"
         },
-        "lowcaseHeaderKeys": {
+        "caseSensitiveHeaderKeys": {
           "type": "boolean"
         },
         "target": { "type": "string" },
