@@ -40,6 +40,9 @@
     "ws": "1.0.1"
   },
   "devDependencies": {
+    "@package/somePackagedPlugin": "file:test/plugins/packaged_plugin",
+    "artillery-plugin-someAdvancedPlugin": "file:test/plugins/advanced_plugin",
+    "artillery-plugin-someNormalPlugin": "file:test/plugins/normal_plugin",
     "bcrypt": "^0.8.5",
     "csv-parse": "1.0.1",
     "eslint": "^0.24.0",

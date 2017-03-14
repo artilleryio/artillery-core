@@ -8,29 +8,43 @@ const test = require('tape');
 const runner = require('../lib/runner').runner;
 
 test('Plugin package name inside plugin config', function(t) {
-    runTest(t, './scripts/plugin_packaged_inner.json');
+  runTest(t, './scripts/plugin_packaged_inner.json');
 });
 
 test('Plugin package name outside plugin config', function(t) {
-    runTest(t, './scripts/plugin_packaged_outer.json');
+  runTest(t, './scripts/plugin_packaged_outer.json');
 });
 
 test('Plugin package name inside plugin config overriding outter package name', function(t) {
-    runTest(t, './scripts/plugin_packaged_inner_override_outter.json');
+  runTest(t, './scripts/plugin_packaged_inner_override_outter.json');
 });
 
 test('Normal artillery-plugin-*', function(t) {
-    runTest(t, './scripts/artillery_plugin.json');
+  runTest(t, './scripts/artillery_plugin.json');
 });
 
-function runTest(t, scriptName){
-    const script = require(scriptName);
-    const ee = runner(script);
+test('Advanced artillery-plugin-*', function(t) {
+  var pluginScript = require('./scripts/advanced_plugin.json');
 
-    ee.on('plugin_loaded', function(stats){
-      t.assert(true);
-      t.end();
-    });
+  pluginScript.config.processor = {
+    "expectHello": function(req, context, ee, next) {
+      t.assert(context.vars.advanced === 'hello');
+      return next();
+    }
+  };
 
-    ee.run();
+  runTest(t, pluginScript);
+});
+
+function runTest(t, scriptRef){
+
+  const script = (typeof scriptRef === 'string') ? require(scriptRef) : scriptRef;
+  const ee = runner(script);
+
+  ee.on('plugin_loaded', function(stats){
+    t.assert(true);
+    t.end();
+  });
+
+  ee.run();
 }

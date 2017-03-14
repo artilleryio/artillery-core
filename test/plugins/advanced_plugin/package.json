@@ -1,0 +1,11 @@
+{
+  "name": "artillery-plugin-someAdvancedPlugin",
+  "version": "1.0.0",
+  "description": "Advanced plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/HarryWeppner",
+  "license": "MPL-2.0"
+}
