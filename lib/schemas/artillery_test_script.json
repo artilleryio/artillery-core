@@ -10,7 +10,7 @@
           "type": "object"
         },
         "lowcaseHeaderKeys" {
-          "type"; "boolean"
+          "type": "boolean"
         },
         "target": { "type": "string" },
         "phases": {
