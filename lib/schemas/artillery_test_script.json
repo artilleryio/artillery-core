@@ -9,6 +9,9 @@
         "environments": {
           "type": "object"
         },
+        "lowcaseHeaderKeys" {
+          "type"; "boolean"
+        },
         "target": { "type": "string" },
         "phases": {
           "type": "array"
