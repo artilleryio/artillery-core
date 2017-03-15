@@ -95,3 +95,15 @@ test('rendering variables', function(t) {
 
   t.end();
 });
+
+test('remove duplicated keys', function(t) {
+  t.deepEqual(L.mergeWith({}, {'X-Header': 123}, {'x-header': 123}, util.removeDuplicatedKeys), {'x-header': 123},
+    'Header should be overrided by lowercase');
+  t.deepEqual(L.mergeWith({}, {'x-header': 123}, {'X-Header': 123}, util.removeDuplicatedKeys), {'X-Header': 123},
+    'Header should be overrided by case-sensitive');
+  t.deepEqual(L.mergeWith({}, {'x-header': 123}, {'x-header': 234}, util.removeDuplicatedKeys), {'x-header': 234},
+    'Header should be overrided when got same keys');
+  t.deepEqual(L.mergeWith({}, {'x-Simple': 111, 'x-header': 123}, {'x-header': 234}, util.removeDuplicatedKeys), {'x-Simple': 111, 'x-header': 234},
+    'Header should remain existing keys');
+  t.end();
+});
