@@ -8,10 +8,8 @@ const assert = require('assert');
 
 function advancedPlugin(config, ee) {
 
-  ee.on('init', function(script, options) {
-    assert(script.config.plugins.someAdvancedPlugin.foo === 'bar');
-    script.config.variables.advanced = 'hello';
-  });
+  assert(config.plugins.someAdvancedPlugin.foo === 'bar');
+  config.variables.advanced = 'hello';
 
   ee.on('done', function(stats){
     ee.emit('plugin_loaded', stats);
