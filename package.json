@@ -55,7 +55,7 @@
     "nock": "^9.0.2",
     "pre-commit": "^1.0.10",
     "sinon": "1.17.6",
-    "socket.io": "1.4.6",
+    "socket.io": "1.7.3",
     "tape": "^4.0.0"
   },
   "repository": {
