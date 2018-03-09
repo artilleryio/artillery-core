@@ -13,7 +13,7 @@ const createServer = require('../targets/simple_ws');
 const port = 3003;
 const script = {
   config: {
-    target: 'ws://localhost:'+port,
+    target: 'ws://localhost:' + port,
     variables: {
       id: [ "a" ]
     }
