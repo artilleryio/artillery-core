@@ -1,8 +1,3 @@
-# artillery-core
+# DEPRECATION NOTICE (2018/04/28) 🛑
 
-[![Build Status](https://travis-ci.org/shoreditch-ops/artillery-core.svg?branch=master)](https://travis-ci.org/shoreditch-ops/artillery-core)
-
-## License
-
-All source code (*.js) and data files (*.json) are distributed under the terms
-of the [MPL2 license](http://mozilla.org/MPL/2.0/).
+This repository [was merged into the main Artillery repository](https://github.com/shoreditch-ops/artillery/pull/457) and is no longer updated.
