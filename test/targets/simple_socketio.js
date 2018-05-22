@@ -58,7 +58,11 @@ function createServer() {
     ws.on('echo', function incoming(message, cb) {
       MESSAGE_COUNT++;
       if (message === 'ping') {
-        cb("pong", {answer: 42});
+        cb('pong', {answer: 42});
+      }
+      if (message.sendAck === true) {
+        console.log('Socket.io sending message ack: ', message);
+        ws.emit('ack', message);
       }
       debug('Socket.io echoing message: %s', message);
       ws.emit('echoed', message);
